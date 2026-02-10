@@ -8,35 +8,36 @@
                 </svg>
             </div>
             <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                <li><a>Item 1</a></li>
+                <li><a>Gallery</a></li>
                 <li>
-                    <a>Parent</a>
+                    <a>Contacts</a>
                     <ul class="p-2">
-                        <li><a>Submenu 1</a></li>
-                        <li><a>Submenu 2</a></li>
+                        <li><a>Instagram</a></li>
+                        <li><a>Line</a></li>
                     </ul>
                 </li>
-                <li><a>Item 3</a></li>
+                <li><a>About Me</a></li>
             </ul>
         </div>
-        <a class="btn btn-ghost text-xl">daisyUI</a>
+        <a class="btn btn-info text-xl">EmmaLin</a>
     </div>
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
+            <li><a>Gallery</a></li>
             <li>
                 <details>
-                    <summary>Parent</summary>
+                    <summary>Contacts</summary>
                     <ul class="p-2 bg-base-100 w-40 z-1">
-                        <li><a>Submenu 1</a></li>
-                        <li><a>Submenu 2</a></li>
+                        <li><a><x-bi-instagram />Instagram</a></li>
+                        <li><a><x-uni-line-o class="inline-block w-5 h-5" />Line</a></li>
                     </ul>
                 </details>
             </li>
-            <li><a>Item 3</a></li>
+            <li><a>About Me</a></li>
         </ul>
     </div>
-    <div class="navbar-end">
-        <a class="btn">Button</a>
+    <div class="navbar-end space-x-3">
+        <a href="/register" class="btn">Register</a>
+        <a href="/login" class="btn">Log In</a>
     </div>
 </div>
