@@ -1,13 +1,18 @@
 <?php
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Photo extends Model
 {
     /** @use HasFactory<\Database\Factories\PhotoFactory> */
     use HasFactory;
+
+    protected $appends = [
+        'url'
+    ];
 
     protected $fillable = [
         'user_id',
@@ -20,7 +25,7 @@ class Photo extends Model
     }
     public function getUrlAttribute(): string
     {
-        return asset('storage/' . $this->image_path);
+        return Storage::url($this->image_path);
     }
 
 }
