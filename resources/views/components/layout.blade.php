@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title ?? 'EmmaLin' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
@@ -15,8 +14,8 @@
         <x-nav />
     @endif
 
-    @if (session('success'))
-        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" x-transition
+    @session('success')
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2500)" x-transition.opacity.duration.300ms
             class="alert alert-success fixed top-14 left-1/2 -translate-x-1/2 z-50 w-auto max-w-md shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -25,7 +24,7 @@
             <span>{{ session('success') }}</span>
             <button @click="show = false" class="btn btn-sm btn-ghost">✕</button>
         </div>
-    @endif
+    @endsession
 
     @if ((! isset($hideNavHero) || ! $hideNavHero) && auth()->guest())
         <x-hero />

@@ -13,7 +13,7 @@
                     <a>Contacts</a>
                     <ul class="p-2">
                         <li><a><x-bi-instagram />Instagram</a></li>
-                        <li><a>Line</a></li>
+                        <li><a><x-uni-line-o class="inline-block w-5 h-5" />Line</a></li>
                     </ul>
                 </li>
                 @guest
