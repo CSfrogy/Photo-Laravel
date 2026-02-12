@@ -5,9 +5,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/debug', function () {
-    return view('auth.login');
-});
 
 Route::get('/register', [\App\Http\Controllers\AuthController::class, 'view'])->name('register')->middleware('guest');
 Route::post('/register', [\App\Http\Controllers\AuthController::class, 'store'])->name('register.store')->middleware('guest');

@@ -8,7 +8,7 @@
                 <input type="text" name="name" class="input" placeholder="Your Name" required />
                 @error('name')
                     <span class="text-error text-sm">{{ $message }}</span>
-                @enderror  
+                @enderror
                 <label class="label">Email</label>
                 <input type="email" name="email" class="input" placeholder="Your Email" required />
                 @error('email')
@@ -21,7 +21,7 @@
                     <span class="text-error text-sm">{{ $message }}</span>
                 @enderror
 
-                <button type="submit" class="btn btn-neutral mt-4">Register</button>
+                <button type="submit" class="btn btn-neutral mt-4">Register an Account</button>
             </fieldset>
         </form>
     </div>

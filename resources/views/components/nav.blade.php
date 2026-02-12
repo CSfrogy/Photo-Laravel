@@ -13,13 +13,25 @@
                     <a>Contacts</a>
                     <ul class="p-2">
                         <li><a><x-bi-instagram />Instagram</a></li>
-                        <li><a><x-uni-line-o class="inline-block w-5 h-5" />Line</a></li>
+                        <li><a>Line</a></li>
                     </ul>
                 </li>
-                <li><a>About Me</a></li>
+                @guest
+                      <li><a>About Me</a></li>
+                @endguest
+                @auth
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST" class="w-full">
+                            @csrf
+                            <button type="submit" class="w-full text-left">Logout</button>
+                        </form>
+                    </li>
+                @endauth
             </ul>
         </div>
-        <a class="btn btn-outline text-xl">EmmaLin</a>
+        <a class="btn btn-outline text-xl">
+            {{ auth()->user()->name ?? 'EmmaLin' }}
+        </a>
     </div>
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
