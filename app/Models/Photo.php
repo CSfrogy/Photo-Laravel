@@ -26,6 +26,9 @@ class Photo extends Model
     }
     public function getUrlAttribute(): string
     {
+        if (! Storage::exists($this->image_path)) {
+            return 'https://picsum.photos/seed/' . $this->id . '/400/400';
+        }
         return Storage::url($this->image_path);
     }
     public function photos(): \Illuminate\Database\Eloquent\Relations\HasMany
