@@ -8,7 +8,7 @@
                 </svg>
             </div>
             <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                <li><a>Gallery</a></li>
+                <li><a href="{{ route('photo.index') }}">Gallery</a></li>
                 <li>
                     <a>Contacts</a>
                     <ul class="p-2">
@@ -17,7 +17,7 @@
                     </ul>
                 </li>
                 @guest
-                      <li><a>About Me</a></li>
+                    <li><a>About Me</a></li>
                 @endguest
                 @auth
                     <li>
@@ -35,7 +35,7 @@
     </div>
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-            <li><a>Gallery</a></li>
+            <li><a href="{{ route('photo.index') }}">Gallery</a></li>
             <li>
                 <details>
                     <summary>Contacts</summary>

@@ -12,7 +12,7 @@ class Photo extends Model
     use HasFactory;
 
     protected $appends = [
-        'url'
+        'url',
     ];
 
     protected $fillable = [
@@ -27,6 +27,10 @@ class Photo extends Model
     public function getUrlAttribute(): string
     {
         return Storage::url($this->image_path);
+    }
+    public function photos(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Photo::class);
     }
 
 }

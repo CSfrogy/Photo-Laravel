@@ -1,9 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePhotoRequest;
 use App\Http\Requests\UpdatePhotoRequest;
 use App\Models\Photo;
+use Illuminate\Support\Facades\Auth;
 
 class PhotoController extends Controller
 {
@@ -12,7 +14,11 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        $photos = Auth::user()->photos()
+            ->get();
+        return view('photo.index', [
+            'photos' => $photos,
+        ]);
     }
 
     /**
@@ -36,6 +42,7 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo)
     {
+
         //
     }
 
