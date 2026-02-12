@@ -38,6 +38,6 @@
     </div>
     <div class="navbar-end space-x-3">
         <a href="{{ route('register') }}" class="btn">Register</a>
-        <a href="/login" class="btn">Log In</a>
+        <a href="{{ route('login') }}" class="btn">Log In</a>
     </div>
 </div>
