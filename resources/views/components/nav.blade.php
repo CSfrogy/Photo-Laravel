@@ -19,7 +19,7 @@
                 <li><a>About Me</a></li>
             </ul>
         </div>
-        <a class="btn btn-info text-xl">EmmaLin</a>
+        <a class="btn btn-outline text-xl">EmmaLin</a>
     </div>
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
@@ -37,7 +37,7 @@
         </ul>
     </div>
     <div class="navbar-end space-x-3">
-        <a href="/register" class="btn">Register</a>
+        <a href="{{ route('register') }}" class="btn">Register</a>
         <a href="/login" class="btn">Log In</a>
     </div>
 </div>
