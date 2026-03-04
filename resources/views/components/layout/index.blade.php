@@ -12,11 +12,12 @@
 
 <body class="pt-16">
     @if (! isset($hideNavHero) || ! $hideNavHero)
-        <x-nav />
+        <x-layout.nav />
     @endif
 
     @session('success')
-        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2500)" x-transition.opacity.duration.300ms
+        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2500)"
+            x-transition.opacity.duration.300ms
             class="alert alert-success fixed top-20 left-1/2 -translate-x-1/2 z-50 w-auto max-w-md shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -31,7 +32,7 @@
         <x-hero />
     @endif
 
-    <main>
+    <main class="max-w-7xl mx-auto px-6">
         {{ $slot }}
     </main>
 </body>

@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/photos', [PhotoController::class, 'index'])->name('photo.index')->middleware('auth');
+Route::post('/photos', [PhotoController::class, 'store'])->name('photo.store')->middleware('auth');
 
 Route::get('/register', [AuthController::class, 'view'])->name('register')->middleware('guest');
 Route::post('/register', [AuthController::class, 'store'])->name('register.store')->middleware('guest');

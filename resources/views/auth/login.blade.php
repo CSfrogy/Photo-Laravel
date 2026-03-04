@@ -1,4 +1,4 @@
-<x-layout :hideNavHero="true">
+<x-layout.index :hideNavHero="true">
     <div class="flex justify-center items-center min-h-screen">
         <form method="POST" action="{{ route('login.store') }}">
             @csrf
@@ -24,4 +24,4 @@
             </fieldset>
         </form>
     </div>
-</x-layout>
+</x-layout.index>
